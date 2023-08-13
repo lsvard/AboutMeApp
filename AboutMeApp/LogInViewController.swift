@@ -11,6 +11,9 @@ final class LogInViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
+    let userName = "I"
+    let password = "am"
+    
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //
@@ -25,5 +28,17 @@ final class LogInViewController: UIViewController {
     @IBAction func forgotPasswordDidTapped(_ sender: Any) {
     }
     
+}
+
+// MARK: - UIAlertController
+extension LogInViewController {
+    private func showAlert(withTitle title: String, andMessage message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.userNameTF.text = ""
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
 }
 
