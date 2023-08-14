@@ -82,8 +82,15 @@ final class LogInViewController: UIViewController {
 
 // MARK: - UIAlertController
 extension LogInViewController {
-    private func showAlert(withTitle title: String, andMessage message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    private func showAlert(
+        withTitle title: String,
+        andMessage message: String
+    ) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.passwordTF.text = ""
         }
