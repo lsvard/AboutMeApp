@@ -25,7 +25,7 @@ final class WelcomeViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    // MARK: - Privat Method
+    // MARK: - Private Methods
     private func setGradienViewColor() {
         let topColor = UIColor(
             red: (203/255.0),

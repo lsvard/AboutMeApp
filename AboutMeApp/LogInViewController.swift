@@ -11,9 +11,6 @@ final class LogInViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    @IBOutlet var forgotUserNameButton: UIButton!
-    @IBOutlet var forgotPasswordButton: UIButton!
-    
     let userName = "User"
     let password = "1"
     
@@ -68,23 +65,17 @@ final class LogInViewController: UIViewController {
     }
     
     @IBAction func forgotUserNameDidPressed() {
-        guard let _ = forgotUserNameButton else {
-            showAlert(
-                withTitle: "Oops",
-                andMessage: "Your User name is \(userName)"
-            )
-            return
-        }
+        showAlert(
+            withTitle: "Oops",
+            andMessage: "Your User name is \(userName)"
+        )
     }
     
     @IBAction func forgotPasswordDidPressed() {
-        guard let _ = forgotPasswordButton else {
-            showAlert(
-                withTitle: "Oops",
-                andMessage: "Your password is \(password)"
-            )
-            return
-        }
+        showAlert(
+            withTitle: "Oops",
+            andMessage: "Your password is \(password)"
+        )
     }
     
 }
