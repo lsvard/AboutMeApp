@@ -19,13 +19,31 @@ final class LogInViewController: UIViewController {
 //
 //    }
 
-    @IBAction func logInButtonDidTapped() {
+    @IBAction func logInButtonPressed() {
+        guard let inputText = userNameTF.text, !inputText.isEmpty else {
+            showAlert(
+                withTitle: "Text field is empty",
+                andMessage: "Please enter your User Name")
+            return
+        }
+        
+        guard let inputText = userNameTF.text, inputText == userName else {
+            showAlert(withTitle: "nj", andMessage: "jn")
+            return
+        }
+        
+        guard let inputText = passwordTF.text, inputText == password else {
+            showAlert(
+                withTitle: "User Name or password are wrong",
+                andMessage: "Please check mistakes")
+            return
+        }
     }
     
-    @IBAction func forgotUserNameDidTapped() {
+    @IBAction func forgotUserNamePressed() {
     }
     
-    @IBAction func forgotPasswordDidTapped(_ sender: Any) {
+    @IBAction func forgotPasswordPressed(_ sender: Any) {
     }
     
 }
