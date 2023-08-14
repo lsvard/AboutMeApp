@@ -30,7 +30,7 @@ final class LogInViewController: UIViewController {
     }
     
     // MARK: - IBActions
-    @IBAction func logInButtonDidPressed() {
+    @IBAction func logInButtonPressed() {
         guard let inputText = userNameTF.text, !inputText.isEmpty else {
             showAlert(
                 withTitle: "User Name field is empty",
@@ -64,14 +64,14 @@ final class LogInViewController: UIViewController {
         }
     }
     
-    @IBAction func forgotUserNameDidPressed() {
+    @IBAction func forgotUserNamePressed() {
         showAlert(
             withTitle: "Oops",
             andMessage: "Your User name is \(userName)"
         )
     }
     
-    @IBAction func forgotPasswordDidPressed() {
+    @IBAction func forgotPasswordPressed() {
         showAlert(
             withTitle: "Oops",
             andMessage: "Your password is \(password)"

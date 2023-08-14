@@ -38,7 +38,7 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="logInButtonDidPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="1GP-qz-KMU"/>
+                                    <action selector="logInButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="1GP-qz-KMU"/>
                                     <segue destination="tDc-H2-wUQ" kind="presentation" modalPresentationStyle="fullScreen" id="Uko-yZ-8iS"/>
                                 </connections>
                             </button>
@@ -49,7 +49,7 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleCaption1"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="forgotPasswordDidPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="mjv-Th-0jM"/>
+                                    <action selector="forgotPasswordPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="mjv-Th-0jM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrg-ih-Tiv">
@@ -59,7 +59,7 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleCaption1"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="forgotUserNameDidPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="dmt-2C-0PA"/>
+                                    <action selector="forgotUserNamePressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="dmt-2C-0PA"/>
                                 </connections>
                             </button>
                         </subviews>
