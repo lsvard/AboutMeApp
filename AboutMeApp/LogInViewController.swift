@@ -94,6 +94,7 @@ extension LogInViewController {
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.passwordTF.text = ""
         }
+        
         alert.addAction(okAction)
         present(alert, animated: true)
     }
