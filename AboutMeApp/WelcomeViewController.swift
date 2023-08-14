@@ -21,23 +21,23 @@ final class WelcomeViewController: UIViewController {
     }
     
     // MARK: - IBActions
-    @IBAction func logOutButton() {
+    @IBAction func logOutButtonPressed() {
         dismiss(animated: true)
     }
     
     // MARK: - Privat Method
     private func setGradienViewColor() {
         let topColor = UIColor(
-            red: (197/255.0),
-            green: (112/255.0),
+            red: (203/255.0),
+            green: (128/255.0),
             blue:(153/255.0),
             alpha: 1
         )
         
         let downColor = UIColor(
-            red: (135/255.0),
-            green: (138/255.0),
-            blue:(255/255.0),
+            red: (122/255.0),
+            green: (160/255.0),
+            blue:(233/255.0),
             alpha: 1
         )
         

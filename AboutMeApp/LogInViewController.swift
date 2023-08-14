@@ -10,6 +10,7 @@ import UIKit
 final class LogInViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
+    
     @IBOutlet var forgotUserNameButton: UIButton!
     @IBOutlet var forgotPasswordButton: UIButton!
     
@@ -22,9 +23,9 @@ final class LogInViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
-       }
-
+        self.view.endEditing(true)
+    }
+    
     // MARK: - IBActions/
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         userNameTF.text?.removeAll()
@@ -32,18 +33,20 @@ final class LogInViewController: UIViewController {
     }
     
     // MARK: - IBActions
-    @IBAction func logInButtonPressed() {
+    @IBAction func logInButtonDidPressed() {
         guard let inputText = userNameTF.text, !inputText.isEmpty else {
             showAlert(
                 withTitle: "User Name field is empty",
-                andMessage: "Please, enter User Name")
+                andMessage: "Please, enter User Name"
+            )
             return
         }
-
+        
         guard let inputText = passwordTF.text, !inputText.isEmpty else {
             showAlert(
                 withTitle: "Password field is empty",
-                andMessage: "Please, enter password")
+                andMessage: "Please, enter password"
+            )
             return
         }
         
@@ -64,20 +67,20 @@ final class LogInViewController: UIViewController {
         }
     }
     
-    @IBAction func forgotUserNamePressed() {
+    @IBAction func forgotUserNameDidPressed() {
         guard let _ = forgotUserNameButton else {
             showAlert(
-                withTitle: "Oops!",
-                andMessage: "Your name is \(userName)"
+                withTitle: "Oops",
+                andMessage: "Your User name is \(userName)"
             )
             return
         }
     }
     
-    @IBAction func forgotPasswordPressed() {
+    @IBAction func forgotPasswordDidPressed() {
         guard let _ = forgotPasswordButton else {
             showAlert(
-                withTitle: "Oops!",
+                withTitle: "Oops",
                 andMessage: "Your password is \(password)"
             )
             return
