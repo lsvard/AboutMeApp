@@ -7,15 +7,22 @@
 
 import UIKit
 
-final class GreetingViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
+    @IBOutlet var welcomeLabel: UILabel!
+    @IBOutlet var helloLabel: UILabel!
     
+    var welcomeLabelText: String!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        welcomeLabel.text = "Welcome, \(welcomeLabelText ?? "")!"
         setGradienViewColor()
-
-        
+        helloLabel.text = "👋"
+    }
+    
+    // MARK: - IBActions
+    @IBAction func logOutButton() {
+        dismiss(animated: true)
     }
     
     // MARK: - Privat Method
@@ -40,6 +47,4 @@ final class GreetingViewController: UIViewController {
         layer.colors = [topColor.cgColor, downColor.cgColor]
         view.layer.insertSublayer(layer, at: 0)
     }
-
-
 }

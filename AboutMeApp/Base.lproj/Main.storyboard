@@ -79,18 +79,20 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="passwordTF" destination="qsz-JG-fmt" id="Hbq-Gn-nz5"/>
-                        <outlet property="userNameTF" destination="l1i-aN-p84" id="0wd-fT-ISf"/>
+                        <outlet property="forgotPasswordButton" destination="rIy-3o-K9r" id="lyy-7D-HEl"/>
+                        <outlet property="forgotUserNameButton" destination="Wrg-ih-Tiv" id="w1C-ut-GeE"/>
+                        <outlet property="passwordTF" destination="qsz-JG-fmt" id="BDD-Bk-VS2"/>
+                        <outlet property="userNameTF" destination="l1i-aN-p84" id="JPV-ZF-ySe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-28.125" y="-27.464788732394368"/>
         </scene>
-        <!--Greeting View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="4Pe-Wp-1B4">
             <objects>
-                <viewController id="tDc-H2-wUQ" customClass="GreetingViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tDc-H2-wUQ" customClass="WelcomeViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mIe-Cl-dUR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,6 +124,10 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Log out">
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="logOutButton" destination="tDc-H2-wUQ" eventType="touchUpInside" id="ehp-8Z-R7B"/>
+                                            <segue destination="oYA-TN-LAI" kind="unwind" unwindAction="unwindFor:" id="0yf-xD-1Z7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -133,8 +139,13 @@
                             <constraint firstItem="x9G-tS-KAw" firstAttribute="centerX" secondItem="mIe-Cl-dUR" secondAttribute="centerX" id="GsG-Id-yDG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="helloLabel" destination="hg9-8T-peb" id="xMV-DB-IVq"/>
+                        <outlet property="welcomeLabel" destination="w5o-t0-5Dr" id="esz-5L-nJM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icS-Ln-67h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="oYA-TN-LAI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="745" y="-28"/>
         </scene>

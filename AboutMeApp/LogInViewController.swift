@@ -10,40 +10,78 @@ import UIKit
 final class LogInViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
+    @IBOutlet var forgotUserNameButton: UIButton!
+    @IBOutlet var forgotPasswordButton: UIButton!
     
-    let userName = "I"
-    let password = "am"
+    let userName = "User"
+    let password = "1"
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let welcomeVC = segue.destination as? WelcomeViewController else {return}
+        welcomeVC.welcomeLabelText = userName
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+       }
 
+    // MARK: - IBActions/
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userNameTF.text?.removeAll()
+        passwordTF.text?.removeAll()
+    }
+    
+    // MARK: - IBActions
     @IBAction func logInButtonPressed() {
         guard let inputText = userNameTF.text, !inputText.isEmpty else {
             showAlert(
-                withTitle: "Text field is empty",
-                andMessage: "Please enter your User Name")
+                withTitle: "User Name field is empty",
+                andMessage: "Please, enter User Name")
+            return
+        }
+
+        guard let inputText = passwordTF.text, !inputText.isEmpty else {
+            showAlert(
+                withTitle: "Password field is empty",
+                andMessage: "Please, enter password")
             return
         }
         
         guard let inputText = userNameTF.text, inputText == userName else {
-            showAlert(withTitle: "nj", andMessage: "jn")
+            showAlert(
+                withTitle: "Invalid User Name or password",
+                andMessage: "Please, enter correct User Name or password"
+            )
             return
         }
         
         guard let inputText = passwordTF.text, inputText == password else {
             showAlert(
-                withTitle: "User Name or password are wrong",
-                andMessage: "Please check mistakes")
+                withTitle: "Invalid login or password",
+                andMessage: "Please, enter correct login or password"
+            )
             return
         }
     }
     
     @IBAction func forgotUserNamePressed() {
+        guard let _ = forgotUserNameButton else {
+            showAlert(
+                withTitle: "Oops!",
+                andMessage: "Your name is \(userName)"
+            )
+            return
+        }
     }
     
-    @IBAction func forgotPasswordPressed(_ sender: Any) {
+    @IBAction func forgotPasswordPressed() {
+        guard let _ = forgotPasswordButton else {
+            showAlert(
+                withTitle: "Oops!",
+                andMessage: "Your password is \(password)"
+            )
+            return
+        }
     }
     
 }
@@ -53,7 +91,7 @@ extension LogInViewController {
     private func showAlert(withTitle title: String, andMessage message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.userNameTF.text = ""
+            self.passwordTF.text = ""
         }
         alert.addAction(okAction)
         present(alert, animated: true)
